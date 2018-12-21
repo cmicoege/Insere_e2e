@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\Devon-dist-current\Devon-dist_2.4.0\software\java" version="1.8.0_172">
+<bootpath>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\resources.jar"/>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\rt.jar"/>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\jsse.jar"/>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\jce.jar"/>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\charsets.jar"/>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\jfr.jar"/>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Devon-dist-current\Devon-dist_2.4.0\software\java\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

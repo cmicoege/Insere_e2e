@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><checkstyle-configurations default-check-configuration="clientpe" file-format-version="5.0.0">
+	<check-configuration description="" location="C:\Devon-dist-current\Devon-dist_2.4.0\workspaces\main\development\settings\checkstyle\checkstyle.xml" name="clientpe" type="external">
+		<additional-data name="protect-config-file" value="false"/>
+	</check-configuration>
+</checkstyle-configurations>

@@ -27,12 +27,21 @@ public class Home_Insere extends BasePage {
 
   private static final By searchLogoImage = By.className("logo-container");
 
-  private static final By searchCatalogTab = By.className("btn-catalog");
+  private static final By searchCatalogTab = By.className("catalog-button");
 
   private static final By searcHomePageSearchBar = By.className("mat-input-element");
 
   private static final By searchITaaSPortalButton = By.xpath("//*[text() = 'ITaaS Portal']");
 
+  // private static final By searchActiveTab = By.className("btn-link-active");
+
+  private static final By searchSupportCard = By.tagName("public-app-support");
+
+  private static final By searchIncidentCard = By.tagName("public-app-incident");
+
+  private static final By searchCatalogContainer = By.className("catalog-container");
+
+  private static final By searchCatalogButton = By.tagName("button");
   // inserePageTitle
 
   @Override
@@ -62,6 +71,7 @@ public class Home_Insere extends BasePage {
     // boolean titleIsCorrect = getDriver().getTitle().equals(pageTitle());
     // boolean homeIsLoaded = (logoImage.isDisplayed()) && (titleIsCorrect);
     // (logoImage.isDisplayed()) &&
+
     if (getDriver().getTitle().equals(pageTitle())) {
       return true;
     } else {
@@ -79,8 +89,11 @@ public class Home_Insere extends BasePage {
 
     }
 
-    WebElement catalogTab = getDriver().findElementDynamic(searchCatalogTab);
-    catalogTab.click();
+    // WebElement catalogTab = getDriver().findElementDynamic(searchCatalogTab);
+    WebElement catalogContainer = getDriver().findElementDynamic(searchCatalogContainer);
+    WebElement catalogButton = catalogContainer.findElement(searchCatalogButton);
+
+    catalogButton.click();
     return new Catalog_Insere();
   }
 
@@ -88,13 +101,27 @@ public class Home_Insere extends BasePage {
 
     boolean userIsLogged;
     try {
-      WebElement homePageSearchBar = getDriver().findElementDynamic(searcHomePageSearchBar);
-      userIsLogged = homePageSearchBar.isDisplayed();
-      return userIsLogged;
+      // WebElement homePageSearchBar = getDriver().findElementDynamic(searcHomePageSearchBar);
+      // WebElement activeTab = getDriver().findElementDynamic(searchActiveTab);
+      // String activeTabName = activeTab.getText();
+      // System.out.println(activeTabName);
+
+      String dashboardTabName = "MY DASHBOARD";
+      System.out.println(dashboardTabName);
+
+      WebElement supportCard = getDriver().findElementDynamic(searchSupportCard);
+      WebElement incidentCard = getDriver().findElementDynamic(searchIncidentCard);
+      boolean cardsAreDisplayed = supportCard.isDisplayed() && incidentCard.isDisplayed();
+      System.out.println(cardsAreDisplayed);
+      // System.out.println(activeTabName.contains(dashboardTabName));
+      userIsLogged = cardsAreDisplayed; // activeTabName.contains(dashboardTabName) &&
+      System.out.println(userIsLogged);
+
     } catch (TimeoutException e) {
       userIsLogged = false;
-      return userIsLogged;
     }
+
+    return userIsLogged;
   }
 
   public boolean goTo_ITaaS() {

@@ -14,7 +14,7 @@ public class FAQ_Insere extends BasePage {
 
   private static final By searchFAQWrapper = By.className("faqs-wrapper");
 
-  private static final By searchHomeTab = By.id("Home");
+  private static final By searchHomeTab = By.cssSelector("img[alt='i4u']");
 
   @Override
   public boolean isLoaded() {

@@ -54,7 +54,7 @@ public class Test_Insere extends BaseTest {
 
     boolean userIsLogged = this.homePage.verifyUserIsLogged();
     String errorMessage = "User isn't logged.";
-    Assert.assertTrue(userIsLogged);
+    Assert.assertTrue(errorMessage, userIsLogged);
   }
 
   @Test
@@ -115,6 +115,10 @@ public class Test_Insere extends BaseTest {
     requestPage.clickNextButton();
     requestPage.confirmRequest();
 
+    boolean requestWasSent = requestPage.verifyRequestWasSent();
+
+    String errorMessage2 = "After successfully sending the service request, the confirmation screen wasn't shown.";
+    Assert.assertTrue(errorMessage2, requestWasSent);
   }
 
   @Test

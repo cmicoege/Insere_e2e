@@ -61,7 +61,7 @@ public class Catalog_Insere extends BasePage {
   public boolean isLoaded() {
 
     WebElement catalogMenu = getDriver().findElementDynamic(searchCatalogMenu);
-    WebElement catalogMenuInput = getDriver().findElementDynamic(searchInput);
+    WebElement catalogMenuInput = catalogMenu.findElement(searchInput);
 
     return catalogMenuInput.isDisplayed();
 
@@ -164,7 +164,7 @@ public class Catalog_Insere extends BasePage {
 
     WebElement firstBlock = getDriver().findElementDynamic(searchFirstBlock);
     List<WebElement> expansionPanels = firstBlock.findElements(searchDescriptionExpansionPanels);
-    List<String> descriptionsList = new ArrayList();
+    List<String> descriptionsList = new ArrayList<String>();
     for (WebElement panel : expansionPanels) {
       panel.click();
 

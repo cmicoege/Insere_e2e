@@ -24,12 +24,7 @@ import junitparams.JUnitParamsRunner;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Test_Insere extends BaseTest {
 
-  // private Devon4ngLoginPage myLoginPage = new Devon4ngLoginPage();
   private Home_Insere homePage = new Home_Insere();
-
-  // private static final ConfigFileReader configFileReader = new ConfigFileReader();
-
-  // private static final String insereUrl = configFileReader.getProperty("insere.url");
 
   @Override
   public void setUp() {
@@ -41,11 +36,7 @@ public class Test_Insere extends BaseTest {
   @Override
   public void tearDown() {
 
-    try {
-      Thread.sleep(3000);
-    } catch (Exception e) {
-
-    }
+    Utils.fixedWait(3.0);
     // TASK Auto-generated method stub
   }
 
@@ -61,8 +52,7 @@ public class Test_Insere extends BaseTest {
   public void Test2_SearchServiceInTheCatalog() {
 
     ConfigFileReader configFileReader = new ConfigFileReader();
-    // String insereUrl = configFileReader.getProperty("insere.url");
-    // String inserePageTitle = configFileReader.getProperty("insere.pagetitle");
+
     String serviceInfo = configFileReader.getProperty("insere.serviceInfo");
     String falseServiceInfo = configFileReader.getProperty("insere.FalseServiceInfo");
     String selectedOptionName;
@@ -92,17 +82,11 @@ public class Test_Insere extends BaseTest {
   @Test
   public void Test3_requestClarityProvisioning() {
 
-    ConfigFileReader configFileReader = new ConfigFileReader();
-    // String insereUrl = configFileReader.getProperty("insere.url");
-    // String inserePageTitle = configFileReader.getProperty("insere.pagetitle");
-    String selectedOptionName;
-    String serviceTitle;
-
     Catalog_Insere catalogPage = this.homePage.goToCatalog();
     catalogPage.goToClarityProvisioning();
     RequestService_Insere requestPage = catalogPage.openClarityProvisioningRequest();
     requestPage.fillFieldsCheckingButton();
-    requestPage.cancelRequest();// cancel request
+    requestPage.cancelRequest();
     requestPage = catalogPage.openClarityProvisioningRequest();
     requestPage.fillFields();
 
@@ -130,7 +114,8 @@ public class Test_Insere extends BaseTest {
 
     Catalog_Insere catalogPage = this.homePage.goToCatalog();
     footerIsDisplayed = Utils.verifyFooterIsDisplayed(catalogPage);
-    String errorMessage2 = "The footer isn't displayed in the home page.";
+    String errorMessage2 = "The footer isn't displayed in the catalog page.";
+    Assert.assertTrue(errorMessage2, footerIsDisplayed);
 
     FAQ_Insere faqPage = catalogPage.goToFAQ();
     Utils.fixedWait(0.3);

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import com.capgemini.mrchecker.selenium.core.BasePage;
 import com.devonfw.e2eInsere.common.readProperties.ConfigFileReader;
+import com.devonfw.e2eInsere.common.utils.Utils;
 
 /**
  * @author cmicoege
@@ -25,11 +26,11 @@ public class Home_Insere extends BasePage {
 
   private static final String inserePageTitle = configFileReader.getProperty("insere.pagetitle");
 
-  private static final By searchLogoImage = By.className("logo-container");
+  //private static final By searchLogoImage = By.className("logo-container");
 
-  private static final By searchCatalogTab = By.className("catalog-button");
+  //private static final By searchCatalogTab = By.className("catalog-button");
 
-  private static final By searcHomePageSearchBar = By.className("mat-input-element");
+  //private static final By searcHomePageSearchBar = By.className("mat-input-element");
 
   private static final By searchITaaSPortalButton = By.xpath("//*[text() = 'ITaaS Portal']");
 
@@ -51,11 +52,7 @@ public class Home_Insere extends BasePage {
 
     // getDriver().navigate().to("https://signin.capgemini.com/opensso/");
     getDriver().navigate().to(insereUrl);
-    try {
-      Thread.sleep(2000);
-    } catch (Exception e) {
-
-    }
+    Utils.fixedWait(2.0);
   }
 
   @Override
@@ -83,12 +80,8 @@ public class Home_Insere extends BasePage {
 
   public Catalog_Insere goToCatalog() {
 
-    try {
-      Thread.sleep(2000);
-    } catch (Exception e) {
 
-    }
-
+    Utils.fixedWait(2.0);
     // WebElement catalogTab = getDriver().findElementDynamic(searchCatalogTab);
     WebElement catalogContainer = getDriver().findElementDynamic(searchCatalogContainer);
     WebElement catalogButton = catalogContainer.findElement(searchCatalogButton);
@@ -129,11 +122,11 @@ public class Home_Insere extends BasePage {
     WebElement ITaaSPortalButton = getDriver().findElementDynamic(searchITaaSPortalButton);
     ITaaSPortalButton.click();
     // ITaaSPortalButton.sendKeys(Keys.CONTROL + "\t");
-    ArrayList tabs = new ArrayList<String>(getDriver().getWindowHandles());
-    Class cls = tabs.get(0).getClass();
-    System.out.println(cls);
-    Class cls2 = ((String) tabs.get(0)).getClass();
-    System.out.println(cls);
+    ArrayList<String> tabs = new ArrayList<String>(getDriver().getWindowHandles());
+    //Class cls = tabs.get(0).getClass();
+    //System.out.println(cls);
+    //Class cls2 = ((String) tabs.get(0)).getClass();
+    //System.out.println(cls);
     // String newTabId = tabs.get(1);
     getDriver().switchTo().window((String) tabs.get(1));
     // I dont understand why is this (String) needed, tabs.get(1) already is String

@@ -207,7 +207,7 @@ public class RequestService_Insere extends BasePage {
     clearUser();
     // System.out.println("THIS ONE IS GRAY:");
     String errorMessageUser = "After all fields but User were filled, Next button is enabled but it should be disabled.";
-    // Assert.assertFalse(errorMessageUser, checkNextButton());// check button -> gray
+    Assert.assertFalse(errorMessageUser, checkNextButton());// check button -> gray
     fillUser();
 
     clearTitle();
@@ -222,7 +222,7 @@ public class RequestService_Insere extends BasePage {
     clearUser();
     // System.out.println("THIS ONE IS GRAY:");
     String errorMessageOneCleared = "After filling all fields and clearing one, Next button is enabled but it should be disabled.";
-    // Assert.assertFalse(errorMessageOneCleared, checkNextButton());// check button -> gray
+    Assert.assertFalse(errorMessageOneCleared, checkNextButton());// check button -> gray
     fillUser();
     // System.out.println("THIS ONE IS NOT GRAY:");
 

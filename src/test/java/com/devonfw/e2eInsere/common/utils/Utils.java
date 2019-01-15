@@ -178,14 +178,14 @@ public class Utils {
   }
 
   public static void fixedWait(Double seconds) {
-
-    try {
+	  System.out.println("hola mundo: " + seconds);
+    /*try {
       Double milisecondsDouble = (seconds * 1000);
       int milisecondsInt = milisecondsDouble.intValue();
       TimeUnit.SECONDS.sleep(milisecondsInt);
     } catch (Exception e) {
       System.out.println(e);
-    }
+    }*/
   }
 
   public static boolean verifyFooterIsDisplayed(BasePage page) {

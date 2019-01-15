@@ -24,7 +24,14 @@ public class Home_Insere extends BasePage {
   // private static final String insereUrl2 = "https://signindev.capgemini.com";
   // private static final String insereUrl = "https://shared-services.pl.s2-eu.capgemini.com";
 
+
+
   private static final String inserePageTitle = configFileReader.getProperty("insere.pagetitle");
+
+  private static final By searchUserInput = By.id("IDToken1");
+  private static final By searchPassInput = By.id("IDToken2");
+  private static final By searchLogInButton = By.className("Btn1Def");
+
 
   //private static final By searchLogoImage = By.className("logo-container");
 
@@ -89,6 +96,19 @@ public class Home_Insere extends BasePage {
     catalogButton.click();
     return new Catalog_Insere();
   }
+
+  public void attemptToLogin() {
+	  WebElement userInput = getDriver().findElementDynamic(searchUserInput);
+	  WebElement passInput = getDriver().findElementDynamic(searchPassInput);
+	  WebElement logInButton = getDriver().findElementDynamic(searchLogInButton);
+
+	  userInput.sendKeys("cmicoege");
+	  passInput.sendKeys("Maribel11");
+
+	  logInButton.click();
+
+  }
+
 
   public boolean verifyUserIsLogged() {
 

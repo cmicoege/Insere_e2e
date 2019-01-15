@@ -48,7 +48,7 @@ public class Home_Insere extends BasePage {
   @Override
   public void load() {
 
-    getDriver().manage().window().maximize();
+    //getDriver().manage().window().maximize();
 
     // getDriver().navigate().to("https://signin.capgemini.com/opensso/");
     getDriver().navigate().to(insereUrl);

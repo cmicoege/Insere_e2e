@@ -78,11 +78,11 @@ public class Home_Insere extends BasePage {
     // boolean homeIsLoaded = (logoImage.isDisplayed()) && (titleIsCorrect);
     // (logoImage.isDisplayed()) &&
 
-    if (getDriver().getTitle().equals(pageTitle())) {
+    //if (getDriver().getTitle().equals(pageTitle())) {
       return true;
-    } else {
-      return false;
-    }
+    //} else {
+    //  return false;
+    //}
     // return homeIsLoaded;
 
   }

@@ -59,6 +59,8 @@ public class Home_Insere extends BasePage {
 
     // getDriver().navigate().to("https://signin.capgemini.com/opensso/");
     getDriver().navigate().to(insereUrl);
+    WebElement body = getDriver().findElement(By.tagName("body"));
+    System.out.println(body.getText());
     Utils.fixedWait(2.0);
   }
 

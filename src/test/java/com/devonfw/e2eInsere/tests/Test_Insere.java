@@ -42,7 +42,7 @@ public class Test_Insere extends BaseTest {
 
   @Test
   public void Test1_login() {
-
+    this.homePage.attemptToLogin();
     boolean userIsLogged = this.homePage.verifyUserIsLogged();
     String errorMessage = "User isn't logged.";
     Assert.assertTrue(errorMessage, userIsLogged);

@@ -32,6 +32,8 @@ public class Home_Insere extends BasePage {
   private static final By searchPassInput = By.id("IDToken2");
   private static final By searchLogInButton = By.className("Btn1Def");
 
+  private static final By searchBody = By.tagName("body");
+
 
   //private static final By searchLogoImage = By.className("logo-container");
 
@@ -59,7 +61,7 @@ public class Home_Insere extends BasePage {
 
     // getDriver().navigate().to("https://signin.capgemini.com/opensso/");
     getDriver().navigate().to(insereUrl);
-    WebElement body = getDriver().findElement(By.tagName("body"));
+    WebElement body = getDriver().findElementDynamic(searchBody);
     System.out.println(body.getText());
     Utils.fixedWait(2.0);
   }
@@ -100,14 +102,19 @@ public class Home_Insere extends BasePage {
   }
 
   public void attemptToLogin() {
-	  WebElement userInput = getDriver().findElementDynamic(searchUserInput);
-	  WebElement passInput = getDriver().findElementDynamic(searchPassInput);
-	  WebElement logInButton = getDriver().findElementDynamic(searchLogInButton);
+	  try {
+		  WebElement userInput = getDriver().findElementDynamic(searchUserInput);
+		  WebElement passInput = getDriver().findElementDynamic(searchPassInput);
+		  WebElement logInButton = getDriver().findElementDynamic(searchLogInButton);
 
-	  userInput.sendKeys("cmicoege");
-	  passInput.sendKeys("Maribel11");
+		  userInput.sendKeys("cmicoege");
+		  passInput.sendKeys("Maribel11");
 
-	  logInButton.click();
+		  logInButton.click();
+	  }
+	  catch(Exception e) {
+		  System.out.println(e);
+	  }
 
   }
 

@@ -49,7 +49,7 @@ public class Catalog_Insere extends BasePage {
 
   private static final By searchRequestButton = By.tagName("button");
 
-  private static final By searchFAQButton = By.cssSelector("a[href='/faqs']");
+  private static final By searchFAQButton = By.cssSelector("a[href='/home/faqs']");
 
   @Override
   public String pageTitle() {

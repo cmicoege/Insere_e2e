@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -181,7 +181,7 @@ public class Utils {
 	  try {
       Double milisecondsDouble = (seconds * 1000);
       int milisecondsInt = milisecondsDouble.intValue();
-      TimeUnit.SECONDS.sleep(milisecondsInt);
+      TimeUnit.MILLISECONDS.sleep(milisecondsInt);
     } catch (Exception e) {
       System.out.println(e);
     }

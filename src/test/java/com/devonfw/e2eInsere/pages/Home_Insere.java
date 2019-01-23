@@ -107,8 +107,8 @@ public class Home_Insere extends BasePage {
 		  WebElement passInput = getDriver().findElementDynamic(searchPassInput);
 		  WebElement logInButton = getDriver().findElementDynamic(searchLogInButton);
 
-		  userInput.sendKeys("cmicoege");
-		  passInput.sendKeys("Maribel11");
+		  userInput.sendKeys("devonfw_support");
+		  passInput.sendKeys("02jI%lfpKqfz");
 
 		  logInButton.click();
 	  }
